@@ -11,21 +11,24 @@ namespace Unit02.Game
     /// </summary>
     public class Director
     {
-        List<Die> dice = new List<Die>();
+        Deck deck = new Deck();
         bool isPlaying = true;
-        int score = 0;
-        int totalScore = 0;
+        int points = 300;
+        int old_card = 0;
+        string old_suit;
+        int new_card = 0;
+        string new_suit;
+        
 
         /// <summary>
         /// Constructs a new instance of Director.
         /// </summary>
         public Director()
         {
-            for (int i = 0; i < 5; i++)
-            {
-                Die die = new Die();
-                dice.Add(die);
-            }
+            deck.draw();
+            old_card = deck.value;
+            old_suit = deck.suitName;
+
         }
 
         /// <summary>
@@ -46,9 +49,17 @@ namespace Unit02.Game
         /// </summary>
         public void GetInputs()
         {
-            Console.Write("Roll dice? [y/n] ");
-            string rollDice = Console.ReadLine();
-            isPlaying = (rollDice == "y");
+            //Draw new Card
+            deck.draw();
+            new_card = deck.value;
+            new_suit = deck.suitName;
+            //Print Old card
+            Console.WriteLine($"The starting card is a {old_card} of {old_suit}");
+            //Input guess
+            Console.WriteLine("Is the next card going to be higher or lower? [h/l]:  ");
+            string higherOrLower = Console.ReadLine();
+            Console.WriteLine($"The card was a {new_card} of {new_suit}");
+            
         }
 
         /// <summary>
@@ -56,18 +67,15 @@ namespace Unit02.Game
         /// </summary>
         public void DoUpdates()
         {
-            if (!isPlaying)
+            
+            if ((new_card > old_card && higherOrLower = "h")||(new_card < old_card && higherOrLower = "l"))
             {
-                return;
+                points = points + 100;
             }
-
-            score = 0;
-            foreach (Die die in dice)
+            else
             {
-                die.Roll();
-                score += die.points;
+                points = points - 75;
             }
-            totalScore += score;
         }
 
         /// <summary>
@@ -75,20 +83,23 @@ namespace Unit02.Game
         /// </summary>
         public void DoOutputs()
         {
-            if (!isPlaying)
-            {
-                return;
-            }
-
-            string values = "";
-            foreach (Die die in dice)
-            {
-                values += $"{die.value} ";
-            }
-
-            Console.WriteLine($"You rolled: {values}");
+            
             Console.WriteLine($"Your score is: {totalScore}\n");
             isPlaying = (score > 0);
+            if (isPlaying)
+            {
+                Console.WriteLine($"Your score is: {totalScore}\n");
+                Console.WriteLine($"Would you like to draw again? (y/n)");
+                string drawAgain = Console.ReadLine();
+                isPlaying = (drawAgain == "y" || drawAgain == "Y");
+                old_card = new_card;
+                old_suit = new_suit;  
+            }
+            else
+            {
+                Console.WriteLine($"Your final score is: {totalScore}\n");
+            }
+            
         }
     }
 }
