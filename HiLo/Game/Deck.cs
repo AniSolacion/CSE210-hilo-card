@@ -39,7 +39,7 @@ namespace Unit02.Game
             
             Random random = new Random();
 
-            bool legalValue = false;
+            bool legalValue = true;
             while (legalValue)
             {
                 value = random.Next(1, 14);
@@ -48,7 +48,7 @@ namespace Unit02.Game
 
                 if (!discard.Contains(card))
                 {
-                    legalValue = true;
+                    legalValue = false;
                 }
                 /*
                 // if the card is already in the deck(or discard), don't give them a duplicate card!
