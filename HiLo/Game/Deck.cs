@@ -11,7 +11,7 @@ namespace Unit02.Game
 
     public class Deck
     {
-        public list<int> discard = new list<int>();
+        public List<int> discard = new List<int>();
         public int card = 0;
         public string suitName;
         public int suit = 0;
@@ -30,10 +30,10 @@ namespace Unit02.Game
         public void draw()
         {
             // if discard pile is full, leave the last discarded card and reshuffe the rest.
-            if (sizeof(deck) == 52)
+            if (discard.Count == 52)
             {
-                int discardValue = deck[51];
-                discard.clear();
+                int discardValue = discard[51];
+                discard.Clear();
                 discard.Add(discardValue);
             }
             
