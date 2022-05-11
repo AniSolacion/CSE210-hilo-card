@@ -47,7 +47,7 @@ namespace Unit02.Game
         }
 
         /// <summary>
-        /// Asks the user if they want to roll.
+        /// Asks the user if the next card is going to be higher or lower.
         /// </summary>
         public void GetInputs()
         {
@@ -83,7 +83,7 @@ namespace Unit02.Game
         }
 
         /// <summary>
-        /// Displays the dice and the score. Also asks the player if they want to roll again. 
+        /// Displays the card and the score. Also asks the player if they want to draw again. 
         /// </summary>
         public void DoOutputs()
         {

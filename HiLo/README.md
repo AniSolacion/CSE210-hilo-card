@@ -1,9 +1,9 @@
-# Dice
-Are you willing to risk everything? Play Dice and you might be 
-surprised. The rules are simple. Roll the dice. Count the ones and 
-fives. Each one is worth 100 and 50 points respectively. As long as 
-you roll at least a one or a five you can try again. If not the game 
-is over.
+# HiLo
+Are you willing to risk everything? Play HiLo and you might be 
+surprised. The rules are simple. Draw a card. Guess whether the next 
+card will be higher or lower. Correct guess will give you 100 points.
+Wrong guess will lose 75 points. As long as you don't drop to 0 
+points you can try again. If not the game is over.
 
 ## Getting Started
 ---
@@ -28,7 +28,6 @@ root                    (project root folder)
 +-- Game                (source code folder)
 +-- Program.cs          (program entry point)    
 +-- README.md           (general info)
-+-- Unit02.csproj       (dotnet project file)
 ```
 
 ## Required Technologies
@@ -37,4 +36,6 @@ root                    (project root folder)
 
 ## Authors
 ---
-* Matt Manley (manleym@byui.edu)
+* Logan Huston
+* Joseph Cheney
+* Framework from Matt Manley (manleym@byui.edu)
