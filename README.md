@@ -38,4 +38,5 @@ root                    (project root folder)
 ---
 * Logan Huston
 * Joseph Cheney
+* Michael (Mike) Child
 * Framework from Matt Manley (manleym@byui.edu)

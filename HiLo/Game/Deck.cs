@@ -50,17 +50,6 @@ namespace Unit02.Game
                 {
                     legalValue = false;
                 }
-                /*
-                // if the card is already in the deck(or discard), don't give them a duplicate card!
-                foreach (int iCard in deck) 
-                {
-                    // don't remember if this is okay or should be deck[iCard]
-                    if (iCard != card)
-                    {
-                        legalValue = true;
-                    }
-                }
-                */
             }
 
             discard.Add(value);
